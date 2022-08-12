@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import Dummy from "../components/Dummy";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
       </nav>
 
       <main className={styles.main}>
+        <Dummy />
         <h1 className={styles.title}>Mockingbird</h1>
 
         <p className={styles.description}>
