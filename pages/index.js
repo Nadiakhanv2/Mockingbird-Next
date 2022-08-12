@@ -35,6 +35,16 @@ export default function Home() {
           </Link>
         </ul>
       </nav>
+      <style jsx>{`
+      .myImg{
+        border-radius: 10px;
+
+      }
+      h2{
+        font-size: 38px;
+
+      }
+      `}</style>
 
       <main className={styles.main}>
         <h1 className={styles.title}>Mockingbird</h1>
@@ -43,8 +53,9 @@ export default function Home() {
           A blog Mockingbird is for the coders to improve skills , bug fixes and
           more in easiest way.
         </p>
-
+        <img src="/coder.jpg" alt="img" width={250} height={ 160} className='myImg'/>
         <div className="blogs">
+
           <h2>Popular Blogs</h2>
           <div className="blogItem">
             <h3>How to learn JavaScript in 2k22</h3>
