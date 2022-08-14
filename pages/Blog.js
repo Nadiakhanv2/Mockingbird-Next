@@ -3,6 +3,8 @@ import styles from "../styles/blog.module.css";
 import Link from "next/link";
 
 
+//Step 1 --- collect all the files from blogdirectory 
+// step 2 -- Iterate through them and display them
 
 const Blog = () => {
   return (
