@@ -32,7 +32,7 @@ export default function Home() {
         <img src="/coder.jpg" alt="img" width={250} height={ 160} className='myImg'/>
         <div className="blogs">
 
-          <h2>Popular Blogs</h2>
+          <h2>Latest Blogs</h2>
           <div className="blogItem">
             <h3>How to learn JavaScript in 2k22</h3>
             <p>
