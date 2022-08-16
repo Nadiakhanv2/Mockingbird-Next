@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../styles/blog.module.css";
 import Link from "next/link";
 
@@ -7,34 +7,33 @@ import Link from "next/link";
 // step 2 -- Iterate through them and display them
 
 const Blog = () => {
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    console.log("Blog");
+    fetch("http://localhost:3000/api/blogs").then((a) => {
+      return a.json();
+    })
+      .then((parsed) => {
+        console.log(parsed)
+        setBlogs(parsed);
+    })
+  } , []);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <h2>Latest Blogs</h2>
-        <div className={styles.blogItem}>
-          <Link href={"/blogpost/learn-javascript"}>
-            <h3>How to learn JavaScript in 2k22</h3>
-          </Link>
-          <p>
-            JavaScript is a programming language that allows you to write code
-            that can be run on a web browser.
-          </p>
-        </div>
-        <div className={styles.blogItem}>
-          <h3>How to learn JavaScript in 2k22</h3>
-          <p>
-            JavaScript is a programming language that allows you to write code
-            that can be run on a web browser.
-          </p>
-        </div>
-        <div className={styles.blogItem}>
-          <h3>How to learn JavaScript in 2k22</h3>
-          <p>
-            JavaScript is a programming language that allows you to write code
-            that can be run on a web browser.
-          </p>
-        </div>
-        
+        {blogs.map((blogitem) => {
+          return (
+            <div className={styles.blogItem} key={blogitem.slug}>
+              <Link href={`/blogpost/${blogitem.slug}`}>
+                <h3>{blogitem.title}</h3>
+              </Link>
+              <p >
+                {blogitem.content.substr(0, 100)}....
+              </p>
+            </div>
+          );
+        })}
       </main>
     </div>
   );
