@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import styles from "../styles/blog.module.css";
 import Link from "next/link";
 
@@ -6,17 +6,13 @@ import Link from "next/link";
 //Step 1 --- collect all the files from blogdirectory 
 // step 2 -- Iterate through them and display them
 
-const Blog = () => {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    console.log("Blog");
-    fetch("http://localhost:3000/api/blogs").then((a) => {
-      return a.json();
-    })
-      .then((parsed) => {
-        setBlogs(parsed);
-    })
-  } , []);
+const Blog = (props) => {
+  console.log(props);
+  const [blogs, setBlogs] = useState(props.allBlogs);
+  // useEffect(() => {
+  //   console.log("Blog");
+   
+  // } , []);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -38,4 +34,13 @@ const Blog = () => {
   );
 }
 
-export default Blog
+export async function getStaticProps(context) {
+  let data = await fetch("http://localhost:3000/api/blogs")
+    let allBlogs= await data.json();
+  return { 
+  props: {allBlogs},    //will be passed to the page component as props
+  }
+}
+
+
+export default Blog;
