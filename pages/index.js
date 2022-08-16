@@ -29,7 +29,7 @@ export default function Home() {
           A blog Mockingbird is for the coders to improve skills , bug fixes and
           more in easiest way.
         </p>
-        <img src="/coder.jpg" alt="img" width={250} height={ 160} className='myImg'/>
+        {/* <img src="/coder.jpg" alt="img" width={250} height={160} className='myImg'/> */}
         <div className="blogs">
 
           <h2>Latest Blogs</h2>
