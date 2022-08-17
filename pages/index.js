@@ -47,20 +47,7 @@ export default function Home() {
               that can be run on a web browser.
             </p>
           </div>
-          <div className="blogItem">
-            <h3>How to learn JavaScript in 2k22</h3>
-            <p>
-              JavaScript is a programming language that allows you to write code
-              that can be run on a web browser.
-            </p>
-          </div>
-          <div className="blogItem">
-            <h3>How to learn JavaScript in 2k22</h3>
-            <p>
-              JavaScript is a programming language that allows you to write code
-              that can be run on a web browser.
-            </p>
-          </div>
+          
           <div className="blogItem">
             <h3>How to learn JavaScript in 2k22</h3>
             <p>
